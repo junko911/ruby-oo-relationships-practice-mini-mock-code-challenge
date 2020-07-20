@@ -14,7 +14,7 @@ class Author
   end
 
   def books
-    author_book_pairs.map(&:book)
+    author_book_pairs.map(&:book).uniq
   end
 
   def book_count
