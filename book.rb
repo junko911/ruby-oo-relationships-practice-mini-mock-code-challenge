@@ -13,6 +13,8 @@ class Book
     @@all
   end
 
+  #Many-to-many relationship methods
+  
   def add_author(author)
     AuthorBook.new(author, self)
   end

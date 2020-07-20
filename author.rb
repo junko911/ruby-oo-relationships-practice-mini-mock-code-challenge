@@ -24,4 +24,10 @@ class Author
   def self.most_words
     all.group_by { |author| author.total_words }.max.last
   end
+
+  #Many-to-many relationship methods
+  def add_book(book)
+    AuthorBook.new(self, book)
+  end
+
 end
