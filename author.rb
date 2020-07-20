@@ -13,7 +13,7 @@ class Author
     Book.all.select { |book| book.author == self }
   end
 
-  def write_book
-    
+  def write_book(title, word_count)
+    Book.new(title, self, word_count)
   end
 end
