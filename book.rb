@@ -12,4 +12,8 @@ class Book
   def self.all
     @@all
   end
+
+  def add_author(author)
+    AuthorBook.new(author, self)
+  end
 end
