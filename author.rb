@@ -32,6 +32,7 @@ class Author
   def write_book(title, word_count)
     new_book = Book.new(title, word_count)
     AuthorBook.new(self, new_book)
+    new_book
   end
 
   def add_book(book)

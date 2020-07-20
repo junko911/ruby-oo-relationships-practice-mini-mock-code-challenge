@@ -3,7 +3,7 @@ require_relative './book'
 require_relative './author'
 require_relative './author_book'
 
-#Test cases
+# Test cases
 # author1 = Author.new
 # author2 = Author.new
 # author3 = Author.new

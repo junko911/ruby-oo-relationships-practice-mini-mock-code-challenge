@@ -11,17 +11,17 @@ class Book
   def self.all
     @@all
   end
-
-  def add_author(author)
-    AuthorBook.new(author, self)
-  end
-
+  
   def author_book_pairs
     AuthorBook.all.select { |pair| pair.book == self }
   end
-
+  
   def authors
     author_book_pairs.map(&:author)
   end
 
+  def add_author(author)
+    AuthorBook.new(author, self)
+  end
+  
 end
