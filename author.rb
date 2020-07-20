@@ -14,8 +14,6 @@ class Author
   end
 
   def books
-    # If Book has only one author
-    # Book.all.select { |book| book.author == self }
     author_book_pairs.map(&:book)
   end
 
