@@ -20,4 +20,8 @@ class Author
   def total_words
     books.sum { |book| book.word_count }
   end
+  
+  def self.most_words
+    all.group_by { |author| author.total_words }.max.last
+  end
 end
