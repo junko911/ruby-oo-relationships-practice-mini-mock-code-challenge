@@ -9,8 +9,13 @@ class Author
     @@all
   end
 
+  def author_book_pairs
+    AuthorBook.all.select { |pair| pair.author == self }
+  end
+
   def books
-    Book.all.select { |book| book.author == self }
+    # Book.all.select { |book| book.author == self }
+    author_book_pair.map(&:book)
   end
 
   def write_book(title, word_count)
