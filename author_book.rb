@@ -11,4 +11,8 @@ class AuthorBook
   def self.all
     @@all
   end
+
+  def self.add_new_book
+    
+  end
 end

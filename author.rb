@@ -14,7 +14,8 @@ class Author
   end
 
   def write_book(title, word_count)
-    Book.new(title, self, word_count)
+    new_book = Book.new(title, self, word_count)
+    AuthorBook.new(self, new_book)
   end
   
   def total_words

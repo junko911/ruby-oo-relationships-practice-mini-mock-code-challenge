@@ -24,5 +24,4 @@ class Book
     pair.map(&:author)
   end
 
-  
 end
