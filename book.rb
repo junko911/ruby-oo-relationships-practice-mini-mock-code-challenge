@@ -14,15 +14,16 @@ class Book
     @@all
   end
 
-  #Many-to-many relationship methods
-
   def add_author(author)
     AuthorBook.new(author, self)
   end
 
+  def author_book_pairs
+    AuthorBook.all.select { |pair| pair.book == self }
+  end
+
   def authors
-    pair = AuthorBook.all.select { |pair| pair.book == self }
-    pair.map(&:author)
+    author_book_pairs.map(&:author)
   end
 
 end
