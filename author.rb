@@ -21,17 +21,17 @@ class Author
     books.count
   end
 
-  def write_book(title, word_count)
-    new_book = Book.new(title, word_count)
-    AuthorBook.new(self, new_book)
-  end
-  
   def total_words
     books.sum { |book| book.word_count }
   end
   
   def self.most_words
     all.group_by { |author| author.total_words }.max.last
+  end
+  
+  def write_book(title, word_count)
+    new_book = Book.new(title, word_count)
+    AuthorBook.new(self, new_book)
   end
 
   def add_book(book)
