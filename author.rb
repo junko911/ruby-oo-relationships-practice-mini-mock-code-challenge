@@ -14,13 +14,13 @@ class Author
   end
 
   def books
+    # If Book has only one author
     # Book.all.select { |book| book.author == self }
-    author_book_pair.map(&:book)
+    author_book_pairs.map(&:book)
   end
 
   def write_book(title, word_count)
-    new_book = Book.new(title, self, word_count)
-    AuthorBook.new(self, new_book)
+    Book.new(title, self, word_count)
   end
   
   def total_words
@@ -31,7 +31,6 @@ class Author
     all.group_by { |author| author.total_words }.max.last
   end
 
-  #Many-to-many relationship methods
   def add_book(book)
     AuthorBook.new(self, book)
   end

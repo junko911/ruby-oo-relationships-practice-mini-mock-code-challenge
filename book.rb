@@ -6,6 +6,7 @@ class Book
     @title = title
     @author = author
     @word_count = word_count
+    AuthorBook.new(author, self)
     Book.all << self
   end
 
