@@ -1,5 +1,5 @@
 class Book
-  attr_reader :title, :author, word_count
+  attr_reader :title, :author, :word_count
   @@all = []
 
   def initialize(title, author, word_count)
