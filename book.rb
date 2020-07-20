@@ -20,6 +20,10 @@ class Book
     author_book_pairs.map(&:author)
   end
 
+  def author_count
+    authors.count
+  end
+
   def add_author(author)
     AuthorBook.new(author, self)
   end
